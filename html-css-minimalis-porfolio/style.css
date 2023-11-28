@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root::-webkit-scrollbar {
+    background-color: gray;
+    width: 10px;
+}
+
+:root::-webkit-scrollbar-thumb {
+    background-color: rgb(3, 163, 255);
+    border-radius: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Poppins;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: FadeInLeft 1s ease-in-out;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.navbar-list a {
+    text-decoration: none;
+    color: rgb(3, 163, 255);
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-list a:hover {
+    text-decoration: underline;
+    font-size: large;
+    color: blue;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+.hero {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    animation: fadeIn 1s ease-in-out 0.5s;
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero-left h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.hero-left h2 {
+    margin-top: 0;
+    font-size: 14pt;
+    color: rgb(80, 80, 80);
+    letter-spacing: 2px;
+}
+
+.hero-left p {
+    max-width: 300px;
+}
+
+.hero-social {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.hero-social a svg:hover {
+    fill: blue;
+    transform: scale(1.2);
+}
+
+.hello {
+    letter-spacing: 1px;
+}
+
+#projects {
+    text-align: center;
+    padding: 0 20px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+.project-container {
+    margin-top: 20px;
+    gap: 20px;
+    text-align: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+/* SM */
+@media screen and (max-width: 600px) {
+    .hero {
+        flex-direction: column-reverse;
+        margin-top: 0;
+        padding: 0 4px;
+    }
+    .hero-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+/* MD */
+@media screen and (max-width: 900px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes FadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
