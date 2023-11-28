@@ -59,10 +59,10 @@
     </div>
 
     <!-- Projects Section -->
-    <div id="projects" class="px-12">
+    <div id="projects" class="px-14">
       <h1 class="text-3xl font-bold">Projects</h1>
       <!-- project list -->
-      <div>
+      <div id="projects-list" class="flex flex-col md:flex-row justify-center items-center gap-5 mt-10">
 
       </div>
     </div>
@@ -114,7 +114,7 @@
   </footer>
 
   <template id="card-project">
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-80 bg-base-100 shadow-xl">
       <figure><img src="{{ image }}" alt="{{ title }}"></figure>
       <div class="card-body">
         <h2 class="card-title">
@@ -171,7 +171,7 @@
                   .replace("{{ create_at }}", create_at);
                 console.log(link_tmp, template_parse);
                 // insert link into project list with template card-project
-                document.getElementById("projects").innerHTML += template_parse;
+                document.getElementById("projects-list").innerHTML += template_parse;
               }
             };
             xhr.send();
