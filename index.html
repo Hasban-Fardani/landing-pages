@@ -168,7 +168,7 @@
                   .replaceAll("{{ url }}", link_tmp)
                   .replaceAll("{{ title }}", title)
                   .replace("{{ description }}", description)
-                  .replace("{{ image }}", image)
+                  .replace("{{ image }}", image.replace('{{ url }}', link_tmp))
                   .replace("{{ create_at }}", create_at);
                 console.log(link_tmp, template_parse);
                 // insert link into project list with template card-project
