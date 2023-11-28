@@ -136,6 +136,11 @@
     if (thisUrl.includes("index.html")) {
       thisUrl = thisUrl.replace("index.html", "");
     }
+    // delete '#**' from url
+    if (thisUrl.includes("#")) {
+      thisUrl = thisUrl.split("#")[0];
+    }
+
     // get all folders on repository
     let url = "https://api.github.com/repos/hasban-fardani/landing-pages/git/trees/main?recursive=1"
 
