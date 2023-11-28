@@ -159,6 +159,7 @@
               if (xhr.readyState == 4 && xhr.status == 200) {
                 let response = JSON.parse(xhr.responseText);
                 let title = response.title;
+                let image = response.image;
                 let description = response.description;
                 let create_at = response.create_at;
                 
@@ -167,7 +168,7 @@
                   .replaceAll("{{ url }}", link_tmp)
                   .replaceAll("{{ title }}", title)
                   .replace("{{ description }}", description)
-                  .replace("{{ image }}", link_tmp)
+                  .replace("{{ image }}", image)
                   .replace("{{ create_at }}", create_at);
                 console.log(link_tmp, template_parse);
                 // insert link into project list with template card-project
