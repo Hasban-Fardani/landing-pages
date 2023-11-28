@@ -155,8 +155,11 @@
             let url = thisUrl + folders[i].path;
             let xhr = new XMLHttpRequest();
             xhr.open("GET", url, true);
+            console.log("GET: " + url);
             xhr.onreadystatechange = function () {
               if (xhr.readyState == 4 && xhr.status == 200) {
+                console.log("Parse Response and add with template: " + link_tmp);
+                console.log("Response: " + xhr.responseText);
                 let response = JSON.parse(xhr.responseText);
                 let title = response.title;
                 let image = response.image;
