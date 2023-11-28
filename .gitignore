@@ -1,0 +1,11 @@
+# bun js
+bun.lockb
+
+# node modules
+node_modules/
+
+# css
+input.css
+
+package.json
+tailwind.config.js
