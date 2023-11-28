@@ -114,8 +114,8 @@
   </footer>
 
   <template id="card-project">
-    <div class="card w-96 bg-base-100 shadow-xl" onclick="window.location.href = '{{ url }}'">
-      <figure><img src="{{ image }}" alt="Shoes" /></figure>
+    <div class="card w-96 bg-base-100 shadow-xl">
+      <figure><img src="{{ image }}" alt="{{ title }}"></figure>
       <div class="card-body">
         <h2 class="card-title">
           {{ title }}
@@ -161,14 +161,17 @@
                 let title = response.title;
                 let description = response.description;
                 let create_at = response.create_at;
-
-                // insert link into project list with template card-project
-                document.getElementById("projects").innerHTML += document.getElementById("card-project").innerHTML
-                  .replace("{{ url }}", link_tmp)
-                  .replace("{{ title }}", title)
+                
+                link_tmp = url.replace("info.json", "");
+                let template_parse = document.getElementById("card-project").innerHTML
+                  .replaceAll("{{ url }}", link_tmp)
+                  .replaceAll("{{ title }}", title)
                   .replace("{{ description }}", description)
                   .replace("{{ image }}", link_tmp)
                   .replace("{{ create_at }}", create_at);
+                console.log(link_tmp, template_parse);
+                // insert link into project list with template card-project
+                document.getElementById("projects").innerHTML += template_parse;
               }
             };
             xhr.send();
